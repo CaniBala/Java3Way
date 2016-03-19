@@ -1,9 +1,9 @@
-package methodo;
+package Exerc3;
 
 public class retornaMenorValor {
 
 	private int valor1, valor2, valor3, menorValor;
-	private int[] vetorCresc;
+	private int vetor1[] = new int[3];
 
 	public int calculaMenorValor(int valor1, int valor2, int valor3) {
 
@@ -22,16 +22,28 @@ public class retornaMenorValor {
 
 		return menorValor;
 	}
-	
-	public int[] ordenaCrescente(int valor1, int valor2, int valor3){
-		
+
+	public int[] ordenaCrescente(int valor1, int valor2, int valor3) {
+
 		int temp;
-		
-		//essa parte nao leva em consideracao que o valor do vetor pode mudar
-		valor1 = vetorCresc[0];
-		valor2 = vetorCresc[1];
-		valor3 = vetorCresc[2];
-		
-		return vetorCresc;
+
+		// essa parte nao leva em consideracao que o valor do vetor pode mudar
+		vetor1[0] = valor1;
+		vetor1[1] = valor2;
+		vetor1[2] = valor3;
+
+		for (int y = 0; y < 2; y++) {
+			for (int x = 0; x < 2; x++) {
+
+				if (vetor1[x + 1] < vetor1[x]) {
+
+					temp = vetor1[x];
+					vetor1[x] = vetor1[x + 1];
+					vetor1[x + 1] = temp;
+
+				}
+			}
+		}
+		return vetor1;
 	}
 }
